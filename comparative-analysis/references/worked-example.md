@@ -12,6 +12,7 @@ Note the request pre-commits to a smuggled verdict ("what should the bottom lear
 
 | Term | Finding | Status |
 |---|---|---|
+| Entity scope | "Campus" = physical campus; two campuses run satellite classrooms, rolled into their parents per registrar convention — stated so nobody re-litigates the roster later | fixed by definition |
 | Definition | "Enrollment" consistent (registrar-confirmed starts). "Lead" is NOT: 11 campuses use web forms; 3 heavy on phone leads logged manually in the CRM — undercounted denominator inflates their rate | **flagged** — phone-heavy campuses (Riverside, Dover, Mesa) carry a ⚠ throughout |
 | Window | Same semester for all | fixed by scoping |
 | Maturity | Kirkwood campus opened 5 months ago; median lead-to-enrollment lag is 9 weeks, so a large share of its recent leads *cannot have converted yet* | **flagged** — Kirkwood reported but not ranked on this metric; age-aligned view provided instead |

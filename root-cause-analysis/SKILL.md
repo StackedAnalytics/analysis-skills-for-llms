@@ -28,7 +28,7 @@ Copy this into the response and check items off as the artifacts are produced --
 ```
 - [ ] IS/IS-NOT specification built, UNKNOWNs flagged
 - [ ] 6+ hypotheses enumerated across 4+ categories (incl. measurement artifact)
-- [ ] Evidence x hypothesis matrix scored; diagnostic items identified
+- [ ] Evidence x hypothesis matrix scored, rows basis-tagged (measured/reported/assumed); diagnostic items identified
 - [ ] Disconfirmation pass written (falsifier check + runner-up steelman)
 - [ ] Conclusion: contributions / confidence / sensitivity / residual / verification
 ```
@@ -92,9 +92,10 @@ Rules that carry most of the value:
 - **Diagnosticity over consistency.** Evidence consistent with *all* hypotheses is worthless, no matter how vivid or compelling it feels. The evidence that matters is evidence that *discriminates* — consistent with some columns and inconsistent with others. After filling the matrix, explicitly identify which evidence rows are diagnostic and disregard the rest when concluding. (Every IS-NOT entry from Stage 1 should appear here as an evidence row — they are usually the most diagnostic rows you have.)
 - **Seek to eliminate, not to confirm.** Your working question for each hypothesis is "what would prove this false, and did I check?" The conclusion will be reached by elimination: the hypothesis with the least inconsistent evidence wins — not the one with the most consistent evidence. Those are different questions, and confusing them is the confirmation-bias engine.
 - **"?" cells are findings.** A column full of ?s means you have not tested that hypothesis, not that it is false. Before concluding, either resolve the critical ?s or name them as limitations.
+- **Every evidence row carries a basis tag: MEASURED** (queried or verified directly), **REPORTED** (someone's claim — a vendor's explanation, a stakeholder's account), or **ASSUMED**. Evidence credibility is first-class in ACH for a reason: a matrix that weighs a vendor's story and a ground-truth query as equal rows will eliminate the wrong hypotheses. Reported claims that carry a prediction ("it's a competitor surge — it will revert") are held to that prediction, not re-accepted each period.
 - If you have tool access (SQL, data files, logs), the matrix tells you what to query next: prioritize checks that are diagnostic across multiple columns. If you don't have data access, the ?-cells become your list of questions for the user.
 
-**Artifact required:** the evidence × hypothesis matrix, plus one sentence identifying the most diagnostic evidence.
+**Artifact required:** the evidence × hypothesis matrix with every row basis-tagged (measured / reported / assumed), plus one sentence identifying the most diagnostic evidence.
 
 ## Stage 4 — Disconfirmation pass
 
@@ -116,7 +117,7 @@ The conclusion must contain all five of these elements:
 
 1. **Causal structure with contribution estimates** — e.g., "~70% of the drop is the June 13 tag regression; ~20% is normal seasonal decline that the regression made look worse; ~10% unexplained." Rough numbers are fine; the discipline is the decomposition itself. If it genuinely is one cause, say so — but arrive there, don't assume it.
 2. **Confidence level with justification** — high/medium/low, tied to the diagnosticity of the evidence, not to the coherence of the narrative.
-3. **Sensitivity statement** — which specific evidence items the conclusion depends on most. "This conclusion rests critically on the GTM version history and the app-vs-web comparison; if the version timeline is wrong, the conclusion flips." This tells the reader exactly what to verify.
+3. **Sensitivity statement** — which specific evidence items the conclusion depends on most, *with their basis tags*. "This conclusion rests critically on the GTM version history and the app-vs-web comparison; if the version timeline is wrong, the conclusion flips." A conclusion resting on two measured items reads differently — and should — than the same conclusion resting on one measured item and one reported claim. This tells the reader exactly what to verify, and how much verifying it needs.
 4. **Unexplained residual** — what the leading explanation does *not* account for. Stating the residual is the single strongest defense against narrative smoothing. "Fully explained" conclusions in messy data are usually over-fitted stories.
 5. **Verification/next steps** — the cheapest test that would confirm or kill the conclusion (e.g., "republish the prior container version in a debug environment and replay a test purchase").
 
@@ -143,7 +144,8 @@ Deliver the analysis in this order (artifacts inline, not appendixed):
 [numbered list with categories]
 
 ## Evidence
-[evidence × hypothesis matrix; note on most diagnostic items]
+[evidence × hypothesis matrix, rows basis-tagged (measured/reported/assumed);
+ note on most diagnostic items]
 
 ## Disconfirmation
 [falsifiability check + strongest runner-up case]

@@ -29,7 +29,7 @@ Copy this into the response and check items off as the artifacts are produced --
 
 ```
 - [ ] Mode declared; data-credentials note written
-- [ ] Systematic sweep complete; cut ledger maintained (incl. nulls and PARKED items)
+- [ ] Systematic sweep complete; cut ledger maintained (incl. nulls, PARKED items, and a NOT-EXAMINED line)
 - [ ] Robustness gauntlet run on every candidate finding
 - [ ] Every finding labeled: ROBUST / TENTATIVE / CURIOSITY / ARTIFACT SUSPECT / NULL
 - [ ] Report: ranked lede / forking-paths sentence / handoffs / decision-relevant nulls
@@ -54,8 +54,8 @@ Before finding anything, establish what you're standing on.
 Divergence is the goal — but *systematic* divergence, not attracted-to-shiny divergence. An unstructured explorer gravitates to the first interesting thing and over-mines it (premature convergence sneaking back in through the side door). Instead, sweep planned passes:
 
 1. **Distributions** — shape, spread, modes, mass at zero, top-coding, impossible values.
-2. **Time** — trend, seasonality/cyclicality, step changes, gaps. Step changes are prime artifact suspects (definition or tracking changes).
-3. **Segments** — the handful of dimensions most plausibly decision-relevant (per the Brief), not every dimension available.
+2. **Time** — trend, seasonality/cyclicality, step changes, gaps — **at two granularities** (coarse for trend, fine for dips and step timing): a one-quarter dip is invisible in a yearly series, and a step change's exact date is invisible in a quarterly one. Step changes are prime artifact suspects (definition or tracking changes).
+3. **Segments** — the handful of dimensions most plausibly decision-relevant (per the Brief), not every dimension available. Default the set to the business's **primary entity dimensions** — product/program, location/geography, acquisition channel — plus whatever the Brief adds; skipping a primary entity dimension is a scope decision that must land in the NOT-EXAMINED line, not a silent omission.
 4. **Relationships** — correlations/covariation between key measures; concentration (what share of Y comes from the top decile of X?).
 5. **Residuals** — Tukey's deepest move: fit a crude expectation (last year + trend, a simple seasonal baseline, a group average) and study the *deviations from it*. The interesting structure lives in residuals; raw values mostly restate the obvious.
 
@@ -67,7 +67,7 @@ Rules for this stage:
 - **Chase surprises with one follow-up cut, then log and move on.** Depth-first mining of the first shiny pattern is how the sweep dies. Mark it PARKED in the ledger and finish the passes; Stage 3 is where survivors get real attention.
 - **No causal or explanatory language yet.** Not "mobile drives churn" — "churn is higher in mobile-acquired users." Description of pattern, not attribution of mechanism. Explanatory verbs (drives, causes, because, due to) are banned in Stage 2 output.
 
-**Artifact required:** the cut ledger — total cuts examined, list with one-line outcomes (including nulls), PARKED items flagged.
+**Artifact required:** the cut ledger — total cuts examined, list with one-line outcomes (including nulls), PARKED items flagged, and a closing **NOT-EXAMINED line** naming the dimensions and granularities deliberately not swept. This is the sweep's own IS-NOT column: findings are only as trustworthy as the visible boundary of where you looked, and a reader deserves to know that program mix or monthly granularity went unexamined rather than examined-and-boring.
 
 ## Stage 3 — The robustness gauntlet: try to kill every candidate finding
 
@@ -140,7 +140,8 @@ The deliverable is a **hypothesis slate**, not a conclusions memo. Requirements:
 [per finding: description, status, checks passed/failed/untestable]
 
 ## Cut ledger
-[all comparisons examined, incl. nulls and PARKED items]
+[all comparisons examined, incl. nulls and PARKED items ·
+ NOT-EXAMINED line: dimensions/granularities deliberately not swept]
 
 ## What we did not find
 [decision-relevant nulls]

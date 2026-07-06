@@ -35,7 +35,7 @@ Copy this into the response and check items off as the artifacts are produced --
 
 ```
 - [ ] Claim class needed + framing pressure noted
-- [ ] Counterfactual sentence written explicitly
+- [ ] Counterfactual sentence written explicitly; rival constructions enumerated (effect construction-conditional if they disagree)
 - [ ] Confound inventory: co-timed changes + selection into treatment
 - [ ] Design rung chosen; every checkable assumption checked
 - [ ] Falsification tests run (placebo / unaffected outcomes / dose-response / specification)
@@ -68,8 +68,9 @@ Rules:
 
 - **No counterfactual, no causal claim.** If no defensible construction exists (intervention hit everyone at once, no pre-period, confounded launch), that is the finding. State it plainly and route to bounded/adjacent claims (Stage 6) rather than manufacturing certainty.
 - **A raw pre-period average is not a counterfactual** when trend or seasonality exists — "compared to the prior 4 weeks" silently assumes the world would have stood still. Project the counterfactual; don't freeze it.
+- **Rival constructions get enumerated, not buried.** When more than one credible construction exists (an untreated comparison group *and* a projected own-baseline, say), estimate against both where feasible. If they materially disagree, the effect is reported **construction-conditional** — a range across constructions, not a point from the favored one — and reconciling the constructions becomes a named step. The counterfactual is this analysis's auxiliary basis; committing to one silently when a credible rival changes the answer is the "silent basis" failure in causal clothes.
 
-**Artifact required:** the counterfactual sentence, plus why this construction is the strongest available.
+**Artifact required:** the counterfactual sentence, why this construction is the strongest available, and the credible rival constructions with a note on whether they agree.
 
 ## Stage 3 — Confound inventory
 
@@ -143,7 +144,8 @@ The conclusion must contain all of these:
 [claim class · decision it feeds · framing-pressure notes]
 
 ## Counterfactual
-[the sentence · why this construction is the strongest available]
+[the sentence · why this construction is the strongest available ·
+ rival constructions and whether they agree]
 
 ## Confound inventory
 [co-timed changes · selection into treatment · each: addressed/adjusted/unaddressed]

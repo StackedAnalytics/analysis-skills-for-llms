@@ -31,8 +31,8 @@ The discipline: **a comparison is only as good as its terms.** The skill audits 
 Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete:
 
 ```
-- [ ] Comparability audit: definition / window / maturity / denominator / measurement
-- [ ] Comparison-quantity sentence written
+- [ ] Comparability audit: entity scope / definition / window / maturity / denominator / measurement
+- [ ] Comparison-quantity sentence written; auxiliary basis named, alternatives enumerated if any exist
 - [ ] Composition check: stratified results + mix/performance decomposition
 - [ ] Ranking discipline applied: min-n threshold, funnel logic, regression-to-mean caveats
 - [ ] Interpretation firewall: selection stories before performance stories; causal handoff if needed
@@ -46,6 +46,7 @@ Before computing anything, audit the terms of the comparison. For each entity/gr
 
 | Term | Check |
 |---|---|
+| **Entity scope** | What exactly counts as each entity? Adjacent components — a call center driven by one channel, satellite locations, sub-brands, bundled services — included or excluded *explicitly and symmetrically*, not inherited from however the source tables happen to be organized. An 18% scope difference decides comparisons before any analysis starts |
 | **Definition** | Same metric definition on both sides? (Same event, same filters, same dedup — cross-*system* comparisons route to metric-reconciliation first) |
 | **Window** | Same time period, and both complete? Same seasonality exposure? (Comparing a partial period to a full one, or A's Q4 to B's Q2, compares calendars, not entities) |
 | **Maturity** | Same age/tenure? Cohorts, campaigns, stores, and content all have lifecycle curves — a young entity mid-curve vs. a mature one post-curve is a *pipeline-lag* comparison, not a performance one |
@@ -63,6 +64,7 @@ State explicitly what is being compared, and defend the choice:
 - **Rate, count, or distribution?** Totals answer "who contributes most"; rates answer "who converts best"; they rank differently and serve different decisions. Pick per the Brief.
 - **Mean or median?** Skewed quantities (revenue, LTV, session depth) compared on means are comparisons of whales. Use medians/percentiles by default; compare means only when the total is what matters — and say which you're doing.
 - **Absolute and relative gaps, both.** "B is 2× A" (relative) and "B exceeds A by 0.4 points" (absolute) can describe the same data and license very different reactions. Report both; small bases make relative gaps theatrical.
+- **Name the auxiliary basis — and its rivals.** When the comparison quantity depends on an auxiliary model or reference basis (a matured-cohort baseline, a forecast or LTV model, an attribution model), that basis is part of the comparison's terms: name it in the comparison-quantity sentence, say why it was chosen, and enumerate the credible alternatives that exist in the data or the business. If two credible bases materially disagree — above all if they **flip the ranking** — do not silently commit to one. Report the verdict as **basis-conditional** ("under basis A, X wins; under basis B, Y wins"), and elevate resolving the basis (staleness vs. currency, an audit of the model's assumptions, external client knowledge) to a named next step. Which basis is trustworthy is frequently something the client knows and the data cannot show — surfacing the fork is the analysis; settling it silently is malpractice with good tables.
 
 **Artifact required:** one sentence — "comparing [quantity], [aggregation], per [denominator], over [window], because [decision]."
 
@@ -109,6 +111,7 @@ The conclusion of an observational comparison is a **characterized difference**,
 - **Significance theater.** Declaring differences "significant" without a denominator of comparisons made (forking paths applies here too), or treating statistical detectability as practical importance. State whether the gap is big enough to *matter for the decision* separately from whether it's distinguishable from noise.
 - **The smuggled verdict.** Sliding from "group A's rate is higher" to "group A is better" to "do more of A" in one paragraph. Each step needs its own evidence; the last one usually needs causal-impact.
 - **Symmetric-measurement assumption.** Forgetting that trackability itself can differ by group. Check it (Stage 1) before crowning a winner.
+- **The silent basis.** Committing to one auxiliary model or reference cohort when a credible alternative in the same warehouse flips the verdict. Two analysts making opposite silent choices will produce opposite "data-driven" conclusions from identical data — and both will look rigorous. The basis belongs in the terms of the comparison, visibly, with the fork exposed when it matters.
 
 ## Output format
 
@@ -116,8 +119,9 @@ The conclusion of an observational comparison is a **characterized difference**,
 # Comparison: [entities] on [quantity]
 
 ## Terms of the comparison
-[comparability table: definition/window/maturity/denominator/measurement —
- fixed/flagged/fatal · comparison-quantity sentence]
+[comparability table: entity scope/definition/window/maturity/denominator/
+ measurement — fixed/flagged/fatal · comparison-quantity sentence incl.
+ auxiliary basis; basis-conditional verdict if credible bases disagree]
 
 ## Headline vs. decomposed
 [aggregate gaps (absolute + relative) · stratified results ·

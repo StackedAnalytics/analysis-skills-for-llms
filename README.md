@@ -100,6 +100,11 @@ The general division: execution tooling answers "how do I do this task with thes
 3. **Order matters.** Stages are sequenced to make the failure structurally difficult (e.g., enumeration strictly before evaluation).
 4. **Calibration, not hedging.** The goal is honest uncertainty — including plain confidence when evidence is decisive.
 5. **Model-agnostic.** No product-specific features in skill bodies.
+6. **Load-bearing choices are visible.** Scope boundaries (what wasn't examined), auxiliary bases and constructions (what the numbers rest on), and context provenance (sourced vs. asserted) are declared, never silent — because silent choices are how two rigorous analyses reach opposite conclusions from identical data.
+
+## Evaluations
+
+Skills earn trust through scored runs, not authorship. The convention: each skill may carry an `evals/` folder of scenarios, each scenario a folder containing `prompt.md` (the task, plus the planted data characteristics the rubric tests), `rubric.md` (a MUST pass/fail gate for the skill's core discipline and a SHOULD x/N quality score for breadth), and `notes.md` (provenance and an append-only results log). Scenarios are seeded from real usage -- ideally true A/B runs (baseline vs. skill) -- and are **anonymized**: no client, person, location, or program names, no exact revenue figures. Rubric checks that map to a skill refinement double as regression tests for it. First instance: `exploratory-data-analysis/evals/scenario-001-warehouse-first-look/`.
 
 ## Status & feedback
 

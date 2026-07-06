@@ -30,6 +30,8 @@ A compressed run of the EDA skill. The instructive part is Stage 3 — watch thr
 | 21 | Feature-level: "exports" feature vs. renewal | Accounts using exports renew at 91% vs. 74% — PARKED |
 | 23 | Residuals vs. seasonal baseline | One negative residual cluster: accounts onboarded Nov–Dec 2025 run below expectation — PARKED |
 
+**Not examined:** geography, device platform, and weekly granularity (monthly used throughout) — scope decisions, available for a follow-up pass.
+
 ## Stage 3 — Gauntlet results for the five parked candidates
 
 **C1. March 2026 step increase (+22%).** Artifact screen: **FAIL** — March 2026 is when the SDK v3 rollout added background-sync events. The "increase" is instrumentation. → **ARTIFACT SUSPECT**, and a consequential one: any usage trend crossing March 2026 is contaminated, including several the offsite deck probably already contains.

@@ -33,9 +33,9 @@ The stance this skill enforces: **a recommendation is a conclusion that survives
 Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete:
 
 ```
-- [ ] Criteria and weights frozen before any option is evaluated; framing pressure noted
+- [ ] Criteria and weights frozen (each CONFIRMED or ASSUMED) before any option is evaluated; framing pressure noted
 - [ ] Option set widened: status quo, information-buying, at least one out-of-frame option
-- [ ] Consequence table built with evidence labels carried in; UNKNOWNs explicit
+- [ ] Consequence table built with evidence labels carried in; UNKNOWNs explicit; upstream forks kept forked
 - [ ] Risk & reversibility pass: door type + downside shape per option
 - [ ] Stress test: pre-mortem / runner-up steelman / sycophancy test answered in writing
 - [ ] Direct recommendation with load-bearing weights, flip conditions, and tripwires
@@ -49,10 +49,10 @@ Consume the Refined Question Brief. Establish, in order:
 
 1. **The actual decision and its owner.** What is being decided, by whom, by when, and is it one decision or several tangled together? The analysis advises; the owner decides — built correctly, any disagreement at the end should localize to *weights*, not facts.
 2. **Framing-pressure check, stated in the output.** Does the request lean? ("Should we finally…", "make the case for…", "leadership wants to…"). Name it, then design symmetric: the analysis must be equally capable of recommending against the lean.
-3. **Objectives and weights, committed now.** What is being optimized — revenue, efficiency, risk reduction, speed, optionality — and what's the rough priority order when they conflict? Include the unstated-but-real criteria (political capital, team morale, contract exposure) explicitly; leaving them implicit is how they secretly dominate. These criteria are frozen before options are evaluated. If evaluation later reveals a missing criterion, adding it is fine — *visibly*, with a note that it changes the frame.
+3. **Objectives and weights, committed now.** What is being optimized — revenue, efficiency, risk reduction, speed, optionality — and what's the rough priority order when they conflict? Include the unstated-but-real criteria (political capital, team morale, contract exposure) explicitly; leaving them implicit is how they secretly dominate. Mark each criterion and weight **CONFIRMED** (the owner said it) or **ASSUMED** (the analyst inferred it) — the intake skill's split, applied at the one stage where a wrong assumed weight silently flips the recommendation; assumed weights that prove load-bearing in Stage 6 get surfaced for confirmation, not defended. These criteria are frozen before options are evaluated. If evaluation later reveals a missing criterion, adding it is fine — *visibly*, with a note that it changes the frame.
 4. **Constraints vs. preferences.** Hard constraints (budget ceiling, compliance, deadline) filter options; preferences trade off. Do not let preferences masquerade as constraints — that's how option sets get artificially narrowed.
 
-**Artifact required:** decision + owner + deadline, the framing-pressure note, and the weighted criteria list, timestamped before evaluation.
+**Artifact required:** decision + owner + deadline, the framing-pressure note, and the weighted criteria list — each criterion marked CONFIRMED or ASSUMED — timestamped before evaluation.
 
 ## Stage 2 — Widen the option set
 
@@ -70,6 +70,7 @@ The offered options are a starting point, never the universe. Mandatory addition
 Build the central artifact: **options × criteria**, each cell filled with the best available evidence *at its native uncertainty*:
 
 - Cells cite their source and strength: causal estimates carry their **rung label**, comparisons carry their **distinguishable-from-noise status**, forecasts carry their **intervals**. This is where the skills compose — and where laundering is prevented structurally, because the table format demands the label travel into the cell.
+- **Conditional evidence stays forked.** When an upstream analysis delivers a basis- or construction-conditional result ("under basis A, X wins; under basis B, Y wins"), the fork enters the table *as a fork* — two labeled cell values — never collapsed to the analyst's preferred branch. If the fork flips the leading option, route it to the machinery built for it: the owner's fork (when the branch choice is a judgment the decision-owner holds) or the information-buying option (when resolving the basis is cheap and decisive — it frequently is, and "resolve the basis" is often the best information purchase on the table).
 - Cells with no evidence say **UNKNOWN**, not a guess in evidence's clothing. A column of UNKNOWNs is itself an argument for the information-buying option.
 - Where a cell is an estimate, prefer ranges to points (the predictive skill's discipline, inherited).
 - **Dominance check:** an option worse-or-equal on every criterion is eliminated and said so; if one option dominates outright, the decision is easy and the table proves it. Most real tables show trade-offs — which is the point: the table converts "which is better" into "which trade-off do we prefer," which is the owner's call to make with the weights visible.
@@ -125,14 +126,15 @@ The deliverable is a **direct recommendation with its dependencies exposed** —
 
 ## Frame
 [decision · owner · deadline · framing-pressure note ·
- weighted criteria (timestamped) · hard constraints]
+ weighted criteria (timestamped, CONFIRMED/ASSUMED) · hard constraints]
 
 ## Options considered
 [offered + mandatory additions (status quo, information-buying, out-of-frame)]
 
 ## Consequence table
 [options × criteria · evidence labels per cell (rungs, noise status,
- intervals) · UNKNOWNs explicit · dominance notes]
+ intervals) · UNKNOWNs explicit · upstream forks kept as forks ·
+ dominance notes]
 
 ## Risk & reversibility
 [door type + downside shape per option · regret note if close]
