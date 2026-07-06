@@ -1,0 +1,10 @@
+# Normalize line endings: store and check out all text files with LF,
+# regardless of the contributor's platform or core.autocrlf setting.
+# This silences the Windows "LF will be replaced by CRLF" warnings.
+* text=auto eol=lf
+
+# Be explicit about the text types this repo actually contains.
+*.md   text eol=lf
+*.py   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
