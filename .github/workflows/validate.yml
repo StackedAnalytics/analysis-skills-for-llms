@@ -1,0 +1,23 @@
+name: Validate skills
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # validate_skills.py is stdlib-only; no pip install needed.
+      # It exits 1 on any spec violation (frontmatter rules, BOM,
+      # description cap, undiscoverable reference files), failing the run.
+      - name: Run skill validator
+        run: python validate_skills.py

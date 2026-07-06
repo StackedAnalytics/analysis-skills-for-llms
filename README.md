@@ -82,6 +82,17 @@ The model reads these when the skill runs. This split matters for maintainabilit
 
 When sharing with a client, share the core skills plus *their* overlay only.
 
+## Works alongside execution-layer tooling
+
+These skills govern *reasoning*; they deliberately don't cover the execution layer -- connecting to warehouses, writing SQL, profiling tables, building charts. Tools like Anthropic's official Data Analyst plugin (`knowledge-work-plugins/data`) cover that layer well, and the two compose cleanly:
+
+- Its `/explore-data` profile (grain, null rates, distributions, quality flags) satisfies `exploratory-data-analysis` Stage 1's data-credentials artifact almost exactly -- run it, then apply the sweep, gauntlet, and labeling discipline to what it finds.
+- `/analyze` requests of the form "what's driving the drop" are diagnostic questions: route them through `root-cause-analysis` rather than generic pattern-finding.
+- `/validate-data` is the mechanical QA pass (join explosion, average-of-averages, calculation spot-checks); run it alongside -- not instead of -- the epistemic discipline here. One checks the arithmetic, the other checks the reasoning.
+- Its `data-context-extractor` generates company-specific context in the same SKILL.md + `references/` overlay structure documented above; its output slots directly into the per-engagement overlay convention.
+
+The general division: execution tooling answers "how do I do this task with these tools"; this repo answers "how do I think while doing it so the output is trustworthy."
+
 ## Design principles for skills in this repo
 
 1. **Failure-mode-first.** Every skill names the failure it exists to prevent, and explains *why* it happens — models follow instructions better when the rationale is legible.

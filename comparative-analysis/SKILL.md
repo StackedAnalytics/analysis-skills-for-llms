@@ -47,7 +47,7 @@ Before computing anything, audit the terms of the comparison. For each entity/gr
 | Term | Check |
 |---|---|
 | **Definition** | Same metric definition on both sides? (Same event, same filters, same dedup — cross-*system* comparisons route to metric-reconciliation first) |
-| **Window** | Same time period? Same seasonality exposure? (Comparing A's Q4 to B's Q2 compares quarters, not entities) |
+| **Window** | Same time period, and both complete? Same seasonality exposure? (Comparing a partial period to a full one, or A's Q4 to B's Q2, compares calendars, not entities) |
 | **Maturity** | Same age/tenure? Cohorts, campaigns, stores, and content all have lifecycle curves — a young entity mid-curve vs. a mature one post-curve is a *pipeline-lag* comparison, not a performance one |
 | **Denominator** | Same base, correctly scoped? Rates vs. counts; per-session vs. per-user vs. per-lead; excluded populations symmetric? |
 | **Measurement conditions** | Both groups equally trackable? (Consent rates, platform coverage, and bot filtering can differ *by group* — a measurement gap masquerading as a performance gap) |
