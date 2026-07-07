@@ -25,7 +25,7 @@ Do the stages in order. The bookkeeping artifacts are not paperwork — they are
 
 ## Progress checklist
 
-Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete:
+Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete. In deliverables, the completed checklist belongs in the workings layer ("How we checked this"), not at the top of the document:
 
 ```
 - [ ] Mode declared; data-credentials note written
@@ -148,3 +148,24 @@ The deliverable is a **hypothesis slate**, not a conclusions memo. Requirements:
 ```
 
 For lightweight passes the format compresses, but three elements are never optional: the mode declaration, the status labels, and the cuts-examined denominator.
+
+## Communicating results (two layers)
+
+The vocabulary above is enforcement machinery, not deliverable prose. Output splits into two layers:
+
+**Layer 1 — the deliverable.** Plain business language, lede first, no skill vocabulary. The reader should not be able to tell a "skill" was involved — only that the analysis is unusually clear about what is solid and what is not. Every calibration distinction survives translation: translating a label is required; smoothing it into uniform confident prose is the exact failure the label exists to prevent.
+
+**Layer 2 — the workings.** All required artifacts, unchanged and still mandatory, under a plain heading such as "How we checked this" — appended to documents, offered on request in chat. The completed progress checklist lives here, never at the top of the deliverable.
+
+**Audience dial:** the Brief's audience field governs. Default to plain language; use internal vocabulary in the deliverable body only for an analyst peer who has asked for it.
+
+Translations for this skill's vocabulary:
+
+| Internal | Reader-facing |
+|---|---|
+| ARTIFACT SUSPECT | "this looks like a tracking/measurement issue, not real behavior — verify before anyone reports it" |
+| ROBUST PATTERN | "held up under every stress-test we ran — solid enough to act on or test formally" |
+| TENTATIVE | "early signal — promising, but don't repeat it in a meeting yet" |
+| CURIOSITY | "interesting, quite possibly nothing — noted for honesty" |
+| Forking-paths sentence / cut ledger | "we looked in about N places to find these M things — full list at the end, including where nothing turned up" |
+| NOT-EXAMINED line | "what we haven't looked at yet" |

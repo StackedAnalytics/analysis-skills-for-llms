@@ -25,7 +25,7 @@ This skill's reframe, applied before any investigation: **the goal is decision c
 
 ## Progress checklist
 
-Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete:
+Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete. In deliverables, the completed checklist belongs in the workings layer ("How we checked this"), not at the top of the document:
 
 ```
 - [ ] Decisions, materiality thresholds, and stop condition declared up front
@@ -132,3 +132,23 @@ The matching quest recurs monthly because reconciliations end with a number inst
 ```
 
 For lightweight cases the format compresses, but three elements are never optional: the materiality threshold, the residual with its basis, and the expected-disagreement band. Without the band, the fight is scheduled to recur.
+
+## Communicating results (two layers)
+
+The vocabulary above is enforcement machinery, not deliverable prose. Output splits into two layers:
+
+**Layer 1 — the deliverable.** Plain business language, lede first, no skill vocabulary. The reader should not be able to tell a "skill" was involved — only that the analysis is unusually clear about what is solid and what is not. Every calibration distinction survives translation: translating a label is required; smoothing it into uniform confident prose is the exact failure the label exists to prevent.
+
+**Layer 2 — the workings.** All required artifacts, unchanged and still mandatory, under a plain heading such as "How we checked this" — appended to documents, offered on request in chat. The completed progress checklist lives here, never at the top of the deliverable.
+
+**Audience dial:** the Brief's audience field governs. Default to plain language; use internal vocabulary in the deliverable body only for an analyst peer who has asked for it.
+
+Translations for this skill's vocabulary:
+
+| Internal | Reader-facing |
+|---|---|
+| Expected-disagreement band | "these two systems will normally differ by X–Y% for structural reasons; only investigate outside that range" |
+| Gap waterfall | "where the difference comes from, piece by piece — and the small part we can't explain" |
+| Materiality threshold | "is the gap big enough to change any decision? that's the test — not zero" |
+| System of record per decision | "which number to use for what: [reporting → A; optimization → B]" |
+| Declared stop condition | "we agreed up front when to stop digging — and we're there" |

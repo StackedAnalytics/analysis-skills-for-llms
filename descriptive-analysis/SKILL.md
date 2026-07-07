@@ -31,7 +31,7 @@ The scaffold forces what the tour lacks: an expectation frame for every number, 
 
 ## Progress checklist
 
-Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete:
+Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete. In deliverables, the completed checklist belongs in the workings layer ("How we checked this"), not at the top of the document:
 
 ```
 - [ ] Frame: audience, materiality thresholds, open loops from last period
@@ -130,3 +130,23 @@ Build the body as a pyramid under the lede:
 ```
 
 For lightweight updates the format compresses, but three elements are never optional: an expectation frame on every reported number, the routine/signal triage, and a committed lede — including the steady-state lede when that's the truth.
+
+## Communicating results (two layers)
+
+The vocabulary above is enforcement machinery, not deliverable prose. Output splits into two layers:
+
+**Layer 1 — the deliverable.** Plain business language, lede first, no skill vocabulary. The reader should not be able to tell a "skill" was involved — only that the analysis is unusually clear about what is solid and what is not. Every calibration distinction survives translation: translating a label is required; smoothing it into uniform confident prose is the exact failure the label exists to prevent.
+
+**Layer 2 — the workings.** All required artifacts, unchanged and still mandatory, under a plain heading such as "How we checked this" — appended to documents, offered on request in chat. The completed progress checklist lives here, never at the top of the deliverable.
+
+**Audience dial:** the Brief's audience field governs. Default to plain language; use internal vocabulary in the deliverable body only for an analyst peer who has asked for it.
+
+Translations for this skill's vocabulary:
+
+| Internal | Reader-facing |
+|---|---|
+| SIGNAL | "genuinely unusual for this metric — worth your attention" |
+| ROUTINE (within natural limits) | "normal fluctuation — no story, no action" |
+| Natural process limits / triage basis | "outside its normal range, based on its own history" |
+| Steady-state lede | "nothing needs your attention this period — here's what we're watching" |
+| Open loops | "updates on what we flagged last time" |

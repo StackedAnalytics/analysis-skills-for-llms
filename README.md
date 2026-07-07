@@ -101,6 +101,7 @@ The general division: execution tooling answers "how do I do this task with thes
 4. **Calibration, not hedging.** The goal is honest uncertainty — including plain confidence when evidence is decisive.
 5. **Model-agnostic.** No product-specific features in skill bodies.
 6. **Load-bearing choices are visible.** Scope boundaries (what wasn't examined), auxiliary bases and constructions (what the numbers rest on), and context provenance (sourced vs. asserted) are declared, never silent — because silent choices are how two rigorous analyses reach opposite conclusions from identical data.
+7. **Rigor backstage, clarity front-of-house.** Deliverables read in plain business language — internal vocabulary (labels, ledgers, rungs) is translated for the reader, never pasted — while the full artifacts ship in a "How we checked this" workings layer. Calibration distinctions always survive translation: translating a label is required; smoothing it into uniform confidence is the failure the label exists to prevent.
 
 ## Evaluations
 

@@ -16,7 +16,7 @@ Same two-tier structure as scenario-001. **MUST** = discipline gate
 | M6 | Funnel grain and matching method stated; any fan-out bridge deduped to the counting grain | 3 |
 | M7 | Ranking discipline on segment cells: min-n stated; tiny-n bait reported but not ranked | 9 |
 
-## SHOULD (quality score, x/6)
+## SHOULD (quality score, x/6; x/7 for runs after the 2026-07 communication convention)
 
 | # | Check | Maps to |
 |---|---|---|
@@ -26,6 +26,7 @@ Same two-tier structure as scenario-001. **MUST** = discipline gate
 | S4 | Attribution weakness carried as a symmetric caveat into the conclusion — used to qualify absolutes, not to dodge the comparison | 10 |
 | S5 | Spend treated as a managed input (not triaged/narrated as an outcome); efficiency outcomes get the analytical attention | — |
 | S6 | Conclusion pairs the characterization with named next-step designs (incrementality test; RCA on signals) | — |
+| S7 | *(runs after the 2026-07 communication convention only)* Deliverable body is plain-language: internal vocabulary translated, checklist and artifacts in a workings layer, calibration distinctions preserved in the translation | — |
 
 ## Grading notes
 

@@ -26,7 +26,7 @@ The scaffold inverts the model's instincts: **outside view before inside view, i
 
 ## Progress checklist
 
-Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete:
+Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete. In deliverables, the completed checklist belongs in the workings layer ("How we checked this"), not at the top of the document:
 
 ```
 - [ ] Frame: decision / horizon / error-cost asymmetry / forecast-vs-target split
@@ -156,3 +156,24 @@ Before shipping, apply the exact method (baseline + decomposition + ledger logic
 ```
 
 For lightweight pacing checks the format compresses, but three elements are never optional: at least one naive baseline, an interval with stated basis, and the adjustment ledger for any departure from baseline.
+
+## Communicating results (two layers)
+
+The vocabulary above is enforcement machinery, not deliverable prose. Output splits into two layers:
+
+**Layer 1 — the deliverable.** Plain business language, lede first, no skill vocabulary. The reader should not be able to tell a "skill" was involved — only that the analysis is unusually clear about what is solid and what is not. Every calibration distinction survives translation: translating a label is required; smoothing it into uniform confident prose is the exact failure the label exists to prevent.
+
+**Layer 2 — the workings.** All required artifacts, unchanged and still mandatory, under a plain heading such as "How we checked this" — appended to documents, offered on request in chat. The completed progress checklist lives here, never at the top of the deliverable.
+
+**Audience dial:** the Brief's audience field governs. Default to plain language; use internal vocabulary in the deliverable body only for an analyst peer who has asked for it.
+
+Translations for this skill's vocabulary:
+
+| Internal | Reader-facing |
+|---|---|
+| Naive baseline | "the simple benchmark — same as last year, seasonally adjusted — which any forecast has to beat" |
+| Adjustment ledger | "what we added and subtracted from the benchmark, and the evidence for each" |
+| 80% interval (empirical) | "we'd expect to land between X and Y roughly four times out of five, based on this method's actual track record" |
+| Backtest vs. naive | "we tested the method on past periods where we know the answer" |
+| Revision trigger | "if we're below X by [date], the forecast no longer holds — that's the tripwire" |
+| Forecast vs. target split | "the forecast, the target, and the gap — three separate facts" |

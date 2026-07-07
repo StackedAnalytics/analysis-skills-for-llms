@@ -28,7 +28,7 @@ The quality of the question predicts the quality of the outcome, because the que
 
 ## Progress checklist
 
-Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete:
+Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete. In deliverables, the completed checklist belongs in the workings layer ("How we checked this"), not at the top of the document:
 
 ```
 - [ ] Triage path chosen: INFER / DECLARE / ASK
@@ -142,3 +142,22 @@ For lightweight requests the brief compresses to two sentences of the DECLARE pa
 - **Form-based classification.** Routing "show me X by Y" to descriptive because the verb is "show." Classify on intent markers, not grammar.
 - **The false-confidence oblige.** Answering an unanswerable-as-scoped question as if the data supported it. Offer the answerable adjacent question instead.
 - **Question-refinement as stalling.** The output of this skill is a *better analysis*, not a philosophy seminar. If you can DECLARE and proceed, do; reserve full interviews for genuine forks. Bias toward motion with visible assumptions.
+
+## Communicating results (two layers)
+
+The vocabulary above is enforcement machinery, not deliverable prose. Output splits into two layers:
+
+**Layer 1 — the deliverable.** Plain business language, lede first, no skill vocabulary. The reader should not be able to tell a "skill" was involved — only that the analysis is unusually clear about what is solid and what is not. Every calibration distinction survives translation: translating a label is required; smoothing it into uniform confident prose is the exact failure the label exists to prevent.
+
+**Layer 2 — the workings.** All required artifacts, unchanged and still mandatory, under a plain heading such as "How we checked this" — appended to documents, offered on request in chat. The completed progress checklist lives here, never at the top of the deliverable.
+
+**Audience dial:** the Brief's audience field governs. Default to plain language; use internal vocabulary in the deliverable body only for an analyst peer who has asked for it.
+
+Translations for this skill's vocabulary:
+
+| Internal | Reader-facing |
+|---|---|
+| Refined Question Brief | "Here's the question I'm answering, and what I'm assuming — correct me if I've got it wrong" |
+| DECLARE path | just say it conversationally: "I'm reading this as X — flag me if you meant otherwise" |
+| Presupposed-solution / proxy pathologies | never name the pathology; perform the reattachment or decompression in plain words |
+| CONFIRMED / ASSUMED split | "You told me… / I'm assuming… — say the word if either is off" |

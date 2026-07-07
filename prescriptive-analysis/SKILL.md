@@ -30,7 +30,7 @@ The stance this skill enforces: **a recommendation is a conclusion that survives
 
 ## Progress checklist
 
-Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete:
+Copy this into the response and check items off as the artifacts are produced -- an unchecked item at delivery time means the analysis is incomplete. In deliverables, the completed checklist belongs in the workings layer ("How we checked this"), not at the top of the document:
 
 ```
 - [ ] Criteria and weights frozen (each CONFIRMED or ASSUMED) before any option is evaluated; framing pressure noted
@@ -148,3 +148,24 @@ The deliverable is a **direct recommendation with its dependencies exposed** —
 ```
 
 For lightweight calls the format compresses, but four elements are never optional: criteria before evaluation, the status-quo and information-buying rows, evidence labels carried into the table, and flip conditions on the final recommendation.
+
+## Communicating results (two layers)
+
+The vocabulary above is enforcement machinery, not deliverable prose. Output splits into two layers:
+
+**Layer 1 — the deliverable.** Plain business language, lede first, no skill vocabulary. The reader should not be able to tell a "skill" was involved — only that the analysis is unusually clear about what is solid and what is not. Every calibration distinction survives translation: translating a label is required; smoothing it into uniform confident prose is the exact failure the label exists to prevent.
+
+**Layer 2 — the workings.** All required artifacts, unchanged and still mandatory, under a plain heading such as "How we checked this" — appended to documents, offered on request in chat. The completed progress checklist lives here, never at the top of the deliverable.
+
+**Audience dial:** the Brief's audience field governs. Default to plain language; use internal vocabulary in the deliverable body only for an analyst peer who has asked for it.
+
+Translations for this skill's vocabulary:
+
+| Internal | Reader-facing |
+|---|---|
+| Consequence table | "how each option scores on what you said matters" |
+| Evidence labels in cells (rungs, intervals, noise status) | plain strength phrases: "solid evidence" / "estimate — range X–Y" / "unverified claim" / "unknown" |
+| Pre-mortem | "the three most plausible ways this choice fails, and what we'd watch for" |
+| Flip conditions | "this recommendation reverses if…" |
+| Owner's fork | "this comes down to a judgment call that's yours, not the data's: …" |
+| Sycophancy test | stays in the workings layer — internal discipline, not deliverable prose |

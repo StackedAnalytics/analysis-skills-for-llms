@@ -17,7 +17,7 @@ the planted characteristics in `prompt.md`.
 | M6 | Discloses the cuts-examined denominator and maintains a cut ledger | — |
 | M7 | Every reported finding carries an epistemic status label; ARTIFACT SUSPECTs include a confirmation/routing step | — |
 
-## SHOULD (quality score, x/6)
+## SHOULD (quality score, x/6; x/7 for runs after the 2026-07 communication convention)
 
 | # | Check | Maps to |
 |---|---|---|
@@ -27,6 +27,7 @@ the planted characteristics in `prompt.md`.
 | S4 | Reports decision-relevant nulls (e.g., the spend-table reconciliation) | 9 |
 | S5 | Flags the tracking-birth boundary on the new event type | 10 |
 | S6 | Cut ledger closes with a NOT-EXAMINED line naming unswept dimensions/granularities | — |
+| S7 | *(runs after the 2026-07 communication convention only)* Deliverable body is plain-language: internal vocabulary translated, checklist and artifacts in a workings layer, calibration distinctions preserved in the translation | — |
 
 ## Grading notes
 
