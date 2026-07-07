@@ -100,7 +100,7 @@ The general division: execution tooling answers "how do I do this task with thes
 3. **Order matters.** Stages are sequenced to make the failure structurally difficult (e.g., enumeration strictly before evaluation).
 4. **Calibration, not hedging.** The goal is honest uncertainty — including plain confidence when evidence is decisive.
 5. **Model-agnostic.** No product-specific features in skill bodies.
-6. **Load-bearing choices are visible.** Scope boundaries (what wasn't examined), auxiliary bases and constructions (what the numbers rest on), and context provenance (sourced vs. asserted) are declared, never silent — because silent choices are how two rigorous analyses reach opposite conclusions from identical data.
+6. **Load-bearing choices are visible.** Scope boundaries (what wasn't examined), auxiliary bases and constructions (what the numbers rest on), and context provenance (sourced vs. asserted) are declared, never silent — because silent choices are how two rigorous analyses reach opposite conclusions from identical data. When the field teaches one skill a lesson, the default is that its sibling skills need it too; exemption requires argument — and stays on watch even then, since a reasoned audit has already lost to a live run once.
 7. **Rigor backstage, clarity front-of-house.** Deliverables read in plain business language — internal vocabulary (labels, ledgers, rungs) is translated for the reader, never pasted — while the full artifacts ship in a "How we checked this" workings layer. Calibration distinctions always survive translation: translating a label is required; smoothing it into uniform confidence is the failure the label exists to prevent.
 
 ## Evaluations

@@ -30,7 +30,7 @@ Copy this into the response and check items off as the artifacts are produced --
 
 ```
 - [ ] Frame: decision / horizon / error-cost asymmetry / forecast-vs-target split
-- [ ] Outside view: reference class + at least two naive baselines computed
+- [ ] Outside view: reference class + at least two naive baselines computed; conversion-model basis named, rivals enumerated
 - [ ] Decomposition done: trend (long vs recent), seasonality, known future events, regime check
 - [ ] Adjustment ledger itemized and symmetry-checked
 - [ ] Interval stated with basis; method backtested against naive
@@ -43,7 +43,7 @@ If unsure what good looks like at any stage, read [references/worked-example.md]
 
 Consume the Refined Question Brief if one exists. Establish:
 
-1. **What decision consumes this forecast**, at what granularity and horizon. A staffing decision needs monthly resolution; a pacing check needs "on/off track with what confidence."
+1. **What decision consumes this forecast**, at what granularity and horizon. A staffing decision needs monthly resolution; a pacing check needs "on/off track with what confidence." Scaling decisions ("how much more can we spend/produce/hire before returns break") need the **marginal** quantity, not the average: under diminishing returns, marginal return ≈ elasticity × average return, so a healthy blended average can hide a next-unit return already at or below the threshold. If the decision is about the next dollar, forecast the next dollar — and say plainly when only an experiment can measure it.
 2. **Asymmetric error costs.** Which direction of wrong is worse? Overforecasting leads means overstaffed admissions; underforecasting inventory means stockouts. The *reported* number can legitimately sit off-center of the distribution when costs are asymmetric — but that choice is made explicitly, not smuggled.
 3. **Forecast vs. target.** A forecast is an expectation; a target is an aspiration. Requests routinely conflate them ("forecast us hitting 2,400"). Untangle: the forecast is what the evidence says; the gap to target is a separate, useful output. A forecast bent toward the target corrupts both numbers.
 
@@ -59,8 +59,9 @@ Before touching the specifics of *this* quarter/campaign/launch, establish what 
   - *Run-rate:* current pace extrapolated with seasonal shape, not straight-line.
   - Optionally *drift:* last year + recent average growth.
 - **The baselines are the anchor and the burden of proof.** Every departure from them in later stages must be justified by named evidence. If the final forecast differs wildly from all baselines, either something identifiable and large is happening — or the inside view has taken over.
+- **Conversion models are auxiliary bases — enumerate their rivals.** When the forecast quantity reaches the decision through a conversion model (revenue-per-lead, LTV, margin or take rates, a maturity curve), that model is an auxiliary basis of the entire forecast, exactly like a comparison basis or a counterfactual construction. Name it, and enumerate the credible rivals present in the data or the business (a matured-cohort estimate *and* a maintained forecast-rate model, say). Rivals can agree for one segment and diverge wildly for another — check per segment, not just in aggregate. If rivals materially disagree — above all if they change the decision — the forecast is reported **basis-conditional** ("on basis A the channel clears the threshold with room to spare; on basis B it never does"), and resolving the basis becomes a named step. Which basis is trustworthy is frequently client knowledge the data cannot supply; the next-cheapest resolution is an audit of each basis's own inputs, which can collapse the fork before any experiment.
 
-**Artifact required:** the reference class with its spread, and the computed baselines.
+**Artifact required:** the reference class with its spread, the computed baselines, and — where a conversion model is used — the named basis with its enumerated rivals.
 
 ## Stage 3 — Decompose the series
 
@@ -138,7 +139,8 @@ Before shipping, apply the exact method (baseline + decomposition + ledger logic
 [decision · horizon/granularity · error-cost asymmetry · forecast vs. target]
 
 ## Outside view
-[reference class + spread · naive baselines]
+[reference class + spread · naive baselines · conversion-model basis + rivals
+ (basis-conditional forecast if they disagree)]
 
 ## Decomposition & known events
 [trend (long vs. recent) · seasonality/calendar · scheduled events · regime checks]
@@ -177,3 +179,5 @@ Translations for this skill's vocabulary:
 | Backtest vs. naive | "we tested the method on past periods where we know the answer" |
 | Revision trigger | "if we're below X by [date], the forecast no longer holds — that's the tripwire" |
 | Forecast vs. target split | "the forecast, the target, and the gap — three separate facts" |
+| Basis-conditional forecast | "the answer depends on which value model you trust — on A it's X, on B it's Y; here's how to settle which" |
+| Marginal vs. average return | "the average looks healthy; the question is what the *next* dollar returns — usually lower, and only a test measures it" |
