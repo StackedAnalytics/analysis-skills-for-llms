@@ -111,7 +111,7 @@ Skills earn trust through scored runs, not authorship. The convention: each skil
 
 ## Status & feedback
 
-This is an evolving distillation of practitioner judgment, currently maintained for internal use and shared with select clients — not (yet) a public library. Versioning is deliberate: point people at the repo, not at copies, so everyone runs the latest thinking. The feedback that improves these fastest is the specific form: *"I used skill X and the model still failed in way Y"* — that's the loop the whole design is built on. Run `python validate_skills.py` before committing changes.
+This is an evolving distillation of practitioner judgment, currently maintained for internal use and shared with select clients — not (yet) a public library. Versioning is deliberate: point people at the repo, not at copies, so everyone runs the latest thinking. The feedback that improves these fastest is the specific form: *"I used skill X and the model still failed in way Y"* — that's the loop the whole design is built on. See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to report a failure, add an eval scenario, and open a PR; run `python validate_skills.py` before committing changes.
 
 ## License
 
