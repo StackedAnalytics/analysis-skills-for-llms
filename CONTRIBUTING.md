@@ -13,7 +13,7 @@ Before writing code or prose, skim the [design principles](./README.md#design-pr
 
 ## Before every commit
 
-Run the validator. CI runs it too (`.github/workflows/validate.yml`, on every push and PR), so a red check means a merge is blocked:
+Run the validator. CI runs it too (`.github/workflows/validate.yml`, on every push and PR) and shows a green ✓ / red ✗ `validate` check on your PR. Treat a red check as a hard stop — don't merge over it — even though it isn't (yet) a mechanically enforced gate:
 
 ```bash
 python validate_skills.py
