@@ -40,6 +40,8 @@ Copy this into the response and check items off as the artifacts are produced --
 - [ ] Design rung chosen; every checkable assumption checked
 - [ ] Falsification tests run (placebo / unaffected outcomes / dose-response / specification)
 - [ ] Conclusion phrased at its rung; upgrade path stated
+- [ ] Beyond-the-scaffold pass done; quirks log kept
+- [ ] Decision log maintained (choice / alternative / why / USER-SETTABLE); verdict-shaping decisions surfaced
 ```
 
 If unsure what good looks like at any stage, read [references/worked-example.md](references/worked-example.md) -- a compressed end-to-end run of this skill.
@@ -184,3 +186,18 @@ Translations for this skill's vocabulary:
 | Falsification tests | "we actively tried to break this result — here's what survived" |
 | Construction-conditional effect | "the estimate depends on which comparison you trust: under A it's X, under B it's Y — here's how to settle it" |
 | Upgrade path | "how to get a definitive answer next time (design it in before launch)" |
+
+## Floor, not ceiling — and the decision log
+
+Two failure modes live in this scaffold itself, both observed in field evals; both get mechanisms.
+
+**1. The stages are a floor of discipline, never a ceiling of effort.** A completed checklist with no findings beyond what the stages demanded is a signal of satisficing, not success. Two mechanisms:
+
+- **Beyond-the-scaffold pass (required).** After the required artifacts, take one deliberate unscripted pass — for this skill: *"what about the rollout, the data, or the metric would a skeptic poke at that no falsification test covered?"* — and log its cuts and checks in the same ledger as everything else. Curiosity is made an artifact here because nothing else in this repo survives contact with a checklist.
+- **Quirks log (required, cheap).** Everything odd noticed *in passing* — weird nulls, sentinel values, suspicious joins, columns that don't mean what their names say, grains that surprised you — recorded even when not analyzed. This is the messy-data knowledge analysts accumulate; suppressing it because no artifact asked is how a scaffolded analysis ends up knowing less than a wandering one. Quirks feed the engagement's overlay file.
+
+**2. Method decisions belong to the user.** Executing the stages forces choices — filters, exclusions, thresholds, windows, scopes, bases, dedup rules. Log every one *as it is made* in a **decision log**: what was chosen, the credible alternative, why, and a **USER-SETTABLE** flag wherever a reasonable user might choose differently. Then triage, don't interrogate: the 1–3 decisions that shape the verdict are surfaced in the deliverable itself ("choices you might make differently — I proceeded with X; on Y the answer changes as follows") or, in chat, declared as they are encountered; the rest live in the workings. A silent methodological choice is a silent basis in miniature — this is the general rule that catches the next instance before a field test has to.
+
+**Anti-patterns:** *checklist satisficing* (artifacts complete, curiosity absent) and *the manufactured silent decision* (a choice made only so the stage could proceed, never logged).
+
+**Artifacts required:** the beyond-the-scaffold cuts (in the ledger), the quirks log, and the decision log with USER-SETTABLE flags — all in the workings layer, with the verdict-shaping decisions surfaced up front.

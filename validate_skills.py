@@ -28,6 +28,7 @@ EXPECTED_SECTION_PATTERNS = {
     "rationale section ('Why this skill exists')": r"^##\s+Why this skill exists",
     "anti-patterns self-check": r"^##\s+Anti-patterns",
     "progress checklist": r"^##\s+Progress checklist",
+    "floor-not-ceiling / decision-log section": r"^##\s+Floor, not ceiling",
 }
 
 
