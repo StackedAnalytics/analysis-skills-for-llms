@@ -44,9 +44,34 @@ A future treatment run should therefore hold 7/7 MUST while pulling the
 SHOULD score up toward the baseline's breadth — that convergence, not
 either single score, is the success condition for the skill.
 
+## Re-run after refinements (2026-07-08)
+
+The treatment was re-run zero-context against the same warehouse with the
+refined skill (sweep-coverage rules, communication convention, and the
+floor-not-ceiling / decision-log convention all live). Result: **7/7 MUST,
+7/7 SHOULD** — the breadth gap not only closed but exceeded the baseline's
+4/6, while holding the full discipline gate. All three regression tests
+(S1, S2, S6) fired; the quirks log and decision log both appeared and
+carried real content.
+
+Beyond the regressions, the beyond-the-scaffold pass produced the run's
+best finding: an unscripted franchise-level decomposition localized the
+unexplained volume surge to a single franchise group (majority of recent
+volume, ~67% inquiry-realization on a ~5-day lag vs. the network's stable
+~15–20%) — converting scenario characteristic 3 from "mechanism
+unresolved" into a near-diagnosed feed/agent-logging hypothesis with
+routed RCA entries, and resolving the censoring-defying rate rise
+(characteristic 4) as a mix effect of that group. It also identified a
+second placeholder program bucket both earlier runs had treated as real.
+
+Caveats: n=1 (some gain may be run variance, though the new artifacts'
+fingerprints argue otherwise); one unexplained inconsistency vs. run 1 in
+the channel-gradient percentages (likely a filter difference, unnoted).
+
 ## Results log (append rows; don't rewrite history)
 
 | Date | Run description | Context | MUST | SHOULD | Notes |
 |---|---|---|---|---|---|
 | 2026-07 | Baseline, default behavior | zero-context | 1/7 FAIL | 4/6 | pre-refinement skill era |
 | 2026-07 | Treatment, skill v0.1 | zero-context | 7/7 PASS | 1/6 | pre-refinement (no S6 rule yet) |
+| 2026-07-08 | Treatment, skill v0.2 (all conventions live) | zero-context | 7/7 PASS | 7/7 | regressions fired; quirks+decision logs present; surge localized to one franchise via beyond-scaffold pass |

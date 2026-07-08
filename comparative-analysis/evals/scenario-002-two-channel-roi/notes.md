@@ -58,9 +58,44 @@ Success condition for a future treatment run: 7/7 MUST (the two new checks
 now being taught by the skill) while holding SHOULD at ≥5/6 — ideally
 picking up S2, the saturation divergence the treatment's triage missed.
 
+## Re-run after refinements (2026-07-08)
+
+The treatment was re-run zero-context with the refined skills (entity-scope
+row, auxiliary-basis rule, communication + floor/decision-log conventions
+all live). Result: **6/7 MUST clean with M4 partial; 6/7 SHOULD** — up from
+5/7 and 5/6 pre-refinement.
+
+M2 fired fully, and improved on both original runs: the third spend
+component surfaced inside the comparability audit with provenance verified
+from the data (not asserted), resolved as a cost-per-lead *range* spanning
+both scope choices, listed as a user-settable decision with the bias
+direction stated. The decision log, quirks log, and an unscripted
+platform-vs-CRM count cross-check all appeared. Communication convention
+held throughout — the most client-ready output of the suite to date.
+
+M4 moved from fail to soft pass: the value basis is now explicitly named
+as an auxiliary basis, flagged settable with its breaking condition, and
+no verdict rests on it (conclusion: "a wash, too early to say"). But the
+rival model in the warehouse still went unenumerated — the declare-your-
+basis reflex fires; the hunt-for-rivals reflex does not yet. Residual
+watch item; candidate fix: make rival enumeration an active search
+instruction, not a recall prompt.
+
+Also material: this run's matured-cohort rates (search ~1.8× social on
+enrollment) contradict run 1's parity finding from nominally the same
+basis family — different window/filters, opposite quality conclusion.
+The "same" basis is unstable across instantiations, which both justifies
+mechanical enumeration and raises the priority of the franchise-feed RCA
+(scenario-001 re-run) as the input audit likely to settle the fork.
+
+S2 (the social channel's intra-quarter saturation divergence) remains
+unclaimed across both treatment runs — now partially defensible via the
+run's own too-little-history-for-limits honesty, but still on watch.
+
 ## Results log (append rows; don't rewrite history)
 
 | Date | Run description | Context | MUST | SHOULD | Notes |
 |---|---|---|---|---|---|
 | 2026-07 | Baseline, default behavior | zero-context | 4/7 FAIL | 4/6 | silent basis (forecast model); smuggled reallocation verdict |
 | 2026-07 | Treatment, skills pre-refinement | zero-context | 5/7 FAIL | 5/6 | silent basis (matured cohort); scope inherited from table structure |
+| 2026-07-08 | Treatment, skills v0.2 (all conventions live) | zero-context | 6/7 + M4 partial | 6/7 | scope surfaced+sourced as a range; basis declared settable, no verdict rests on it; rival still unenumerated |
