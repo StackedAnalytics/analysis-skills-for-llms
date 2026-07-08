@@ -112,3 +112,7 @@ Skills earn trust through scored runs, not authorship. The convention: each skil
 ## Status & feedback
 
 This is an evolving distillation of practitioner judgment, currently maintained for internal use and shared with select clients — not (yet) a public library. Versioning is deliberate: point people at the repo, not at copies, so everyone runs the latest thinking. The feedback that improves these fastest is the specific form: *"I used skill X and the model still failed in way Y"* — that's the loop the whole design is built on. Run `python validate_skills.py` before committing changes.
+
+## License
+
+Released under the [MIT License](./LICENSE) — use, adapt, and redistribute freely, including commercially, with the copyright notice retained. The versioning note above is a request, not a restriction: you're welcome to copy, but pointing people at the repo keeps everyone on the latest thinking.
