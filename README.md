@@ -80,6 +80,16 @@ Notes:
 - Because the repo is private, installation works where your git credentials do: Claude Code clones the marketplace with your local SSH key or token, so anyone with read access to the repo can install. Managed environments without your git credentials (e.g. Claude Cowork) can't install from a private repo — use the manual options below there.
 - The plugin manifests live in [`.claude-plugin/`](./.claude-plugin/); skill content is unchanged by the plugin packaging.
 
+## Installation via pi
+
+Install via git:
+
+```bash
+pi install git:https://github.com/StackedAnalytics/analysis-skills-for-llms
+```
+
+Skills will be available as `/skill:name` or through automatic triggering.
+
 ## Manual usage
 
 Each skill is a folder under [`skills/`](./skills/) containing a `SKILL.md` (the instructions) and optional `references/` (worked examples, templates). Portable across LLM products:
