@@ -2,6 +2,15 @@
 
 Structured skill instructions that make LLMs better at high-level data analysis — by engineering around their characteristic reasoning failures rather than just describing good process.
 
+**Packaged as a Claude Code plugin.** All nine skills ship as one plugin (`stacked-analysis`) that installs in a single step and triggers automatically from each skill's description — or lift any `SKILL.md` out and use it standalone in any LLM product. Quick start in Claude Code:
+
+```
+/plugin marketplace add StackedAnalytics/analysis-skills-for-llms
+/plugin install stacked-analysis@stacked-analytics
+```
+
+Details and caveats under [Installation](#installation-via-plugin-marketplace-claude-code); non–Claude Code usage under [Manual usage](#manual-usage).
+
 ## The premise
 
 LLMs doing analysis fail in predictable, *type-specific* ways that differ from how humans fail:
@@ -76,7 +85,7 @@ Notes:
 Each skill is a folder under [`skills/`](./skills/) containing a `SKILL.md` (the instructions) and optional `references/` (worked examples, templates). Portable across LLM products:
 
 - **Claude (Skills / Projects):** install the folder as a skill, or paste `SKILL.md` into project knowledge.
-- **Claude Code / agents:** drop the folder into your skills directory; the frontmatter `description` handles triggering.
+- **Claude Code / agents:** install the plugin (above) for all nine at once, or drop a single skill folder into your skills directory; the frontmatter `description` handles triggering either way.
 - **ChatGPT / Gemini / other:** paste `SKILL.md` contents into a custom GPT / Gem / system prompt. The frontmatter can be dropped; everything below it is model-agnostic.
 - **Ad hoc:** paste the skill body above your question.
 
@@ -127,7 +136,7 @@ Skills earn trust through scored runs, not authorship. The convention: each skil
 
 ## Status & feedback
 
-This is an evolving distillation of practitioner judgment, currently maintained for internal use and shared with select clients — not (yet) a public library. Versioning is deliberate: point people at the repo, not at copies, so everyone runs the latest thinking. The feedback that improves these fastest is the specific form: *"I used skill X and the model still failed in way Y"* — that's the loop the whole design is built on. See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to report a failure, add an eval scenario, and open a PR; run `python validate_skills.py` before committing changes.
+This is an evolving distillation of practitioner judgment, currently maintained for internal use and shared with select clients — not (yet) a public library. Versioning is deliberate: point people at the repo, not at copies, so everyone runs the latest thinking — the plugin makes that literal, since installs track this repo and `/plugin marketplace update stacked-analytics` pulls the latest. The feedback that improves these fastest is the specific form: *"I used skill X and the model still failed in way Y"* — that's the loop the whole design is built on. See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to report a failure, add an eval scenario, and open a PR; run `python validate_skills.py` before committing changes.
 
 ## License
 
