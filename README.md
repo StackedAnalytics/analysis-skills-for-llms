@@ -9,7 +9,7 @@ Structured skill instructions that make LLMs better at high-level data analysis 
 /plugin install stacked-analysis@stacked-analytics
 ```
 
-Details and caveats under [Installation](#installation-via-plugin-marketplace-claude-code); non–Claude Code usage under [Manual usage](#manual-usage).
+The same plugin also installs in [OpenAI Codex](#installation-via-openai-codex) and via [pi](#installation-via-pi). Details and caveats under [Installation](#installation-via-plugin-marketplace-claude-code); other products under [Manual usage](#manual-usage).
 
 ## The premise
 
@@ -90,12 +90,28 @@ pi install git:https://github.com/StackedAnalytics/analysis-skills-for-llms
 
 Skills will be available as `/skill:name` or through automatic triggering.
 
+## Installation via OpenAI Codex
+
+Codex supports the same open [Agent Skills standard](https://agentskills.io) these skills are written in, and its plugin system reads this repo directly. Add the repo as a plugin marketplace:
+
+```bash
+codex plugin marketplace add StackedAnalytics/analysis-skills-for-llms
+```
+
+Then run `/plugins` inside Codex to install `stacked-analysis`. Skills trigger implicitly from their descriptions, or explicitly via `$skill-name` (e.g. `$root-cause-analysis`) or the `/skills` picker.
+
+Notes:
+
+- The Codex manifest lives in [`.codex-plugin/plugin.json`](./.codex-plugin/plugin.json); skill content is shared unchanged with the Claude plugin. (Codex also reads `.claude-plugin/` manifests as a fallback, but the native manifest keeps the two independent.)
+- As with Claude Code, installing from this private repo requires your local git credentials to have read access.
+- Alternatively, skip the plugin system: drop any skill folder into `~/.codex/skills/` (or a repo's `.agents/skills/`), or ask Codex's built-in `$skill-installer` to install one from a GitHub URL.
+
 ## Manual usage
 
 Each skill is a folder under [`skills/`](./skills/) containing a `SKILL.md` (the instructions) and optional `references/` (worked examples, templates). Portable across LLM products:
 
 - **Claude (Skills / Projects):** install the folder as a skill, or paste `SKILL.md` into project knowledge.
-- **Claude Code / agents:** install the plugin (above) for all nine at once, or drop a single skill folder into your skills directory; the frontmatter `description` handles triggering either way.
+- **Claude Code / Codex / agents:** install the plugin (above) for all nine at once, or drop a single skill folder into your skills directory; the frontmatter `description` handles triggering either way.
 - **ChatGPT / Gemini / other:** paste `SKILL.md` contents into a custom GPT / Gem / system prompt. The frontmatter can be dropped; everything below it is model-agnostic.
 - **Ad hoc:** paste the skill body above your question.
 
