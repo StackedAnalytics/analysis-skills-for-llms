@@ -26,15 +26,15 @@ The methods are adapted from the analysis literature — Heuer's Analysis of Com
 
 | Skill | Status | Description |
 |---|---|---|
-| [`question-refinement/`](./question-refinement/) | Draft v0.1 | The front door: reconstruct the real question behind an analysis request (reference-interview + decision-first framing), classify the analysis type on intent, and produce a Refined Question Brief that routes to the skill below |
-| [`root-cause-analysis/`](./root-cause-analysis/) | Draft v0.1 | Root cause analysis: IS/IS-NOT specification → hypothesis enumeration → ACH evidence matrix → disconfirmation → structured conclusion with sensitivity + residual |
-| [`exploratory-data-analysis/`](./exploratory-data-analysis/) | Draft v0.1 | Exploratory analysis: mode declaration + data credentials → systematic sweep with a cut ledger (forking-paths accounting) → robustness gauntlet → status-labeled hypothesis slate |
-| [`metric-reconciliation/`](./metric-reconciliation/) | Draft v0.1 | Evaluative analysis for cross-system metric discrepancies: decision/materiality framing → expected-difference inventory → gap waterfall → verdict against materiality (not zero) → operating agreement (system of record per decision + expected-disagreement band) |
-| [`causal-impact/`](./causal-impact/) | Draft v0.1 | Forward causality / effect estimation ("did X work, how much did it drive"): claim classification → explicit counterfactual → confound inventory → design ladder with rung-labeled conclusions → falsification tests → bounds over false precision |
-| [`comparative-analysis/`](./comparative-analysis/) | Draft v0.1 | Comparing entities/groups: comparability audit → composition check with mix/performance decomposition (Simpson's defense) → ranking discipline (funnel logic, shrinkage, regression-to-mean) → interpretation firewall between description and attribution |
-| [`predictive-analysis/`](./predictive-analysis/) | Draft v0.1 | Forecasting & pacing: outside view + naive baselines as the anchor → decomposition with recency/regime checks → itemized adjustment ledger → empirical intervals from backtests → revision triggers and forecast scoring |
-| [`prescriptive-analysis/`](./prescriptive-analysis/) | Draft v0.1 | Recommendations & decision support (the capstone — consumes the other skills' outputs): criteria frozen before evaluation → widened option set (status quo, information-buying, out-of-frame) → consequence table with uncertainty labels carried in → reversibility & pre-mortem → direct recommendation with flip conditions |
-| [`descriptive-analysis/`](./descriptive-analysis/) | Draft v0.1 | Reporting & characterization: expectation frames on every number → variation triage (SPC — routine vs. signal; routine gets no narrative) → a committed lede including the steady-state lede → proportional emphasis and loop-closing |
+| [`question-refinement/`](./skills/question-refinement/) | Draft v0.1 | The front door: reconstruct the real question behind an analysis request (reference-interview + decision-first framing), classify the analysis type on intent, and produce a Refined Question Brief that routes to the skill below |
+| [`root-cause-analysis/`](./skills/root-cause-analysis/) | Draft v0.1 | Root cause analysis: IS/IS-NOT specification → hypothesis enumeration → ACH evidence matrix → disconfirmation → structured conclusion with sensitivity + residual |
+| [`exploratory-data-analysis/`](./skills/exploratory-data-analysis/) | Draft v0.1 | Exploratory analysis: mode declaration + data credentials → systematic sweep with a cut ledger (forking-paths accounting) → robustness gauntlet → status-labeled hypothesis slate |
+| [`metric-reconciliation/`](./skills/metric-reconciliation/) | Draft v0.1 | Evaluative analysis for cross-system metric discrepancies: decision/materiality framing → expected-difference inventory → gap waterfall → verdict against materiality (not zero) → operating agreement (system of record per decision + expected-disagreement band) |
+| [`causal-impact/`](./skills/causal-impact/) | Draft v0.1 | Forward causality / effect estimation ("did X work, how much did it drive"): claim classification → explicit counterfactual → confound inventory → design ladder with rung-labeled conclusions → falsification tests → bounds over false precision |
+| [`comparative-analysis/`](./skills/comparative-analysis/) | Draft v0.1 | Comparing entities/groups: comparability audit → composition check with mix/performance decomposition (Simpson's defense) → ranking discipline (funnel logic, shrinkage, regression-to-mean) → interpretation firewall between description and attribution |
+| [`predictive-analysis/`](./skills/predictive-analysis/) | Draft v0.1 | Forecasting & pacing: outside view + naive baselines as the anchor → decomposition with recency/regime checks → itemized adjustment ledger → empirical intervals from backtests → revision triggers and forecast scoring |
+| [`prescriptive-analysis/`](./skills/prescriptive-analysis/) | Draft v0.1 | Recommendations & decision support (the capstone — consumes the other skills' outputs): criteria frozen before evaluation → widened option set (status quo, information-buying, out-of-frame) → consequence table with uncertainty labels carried in → reversibility & pre-mortem → direct recommendation with flip conditions |
+| [`descriptive-analysis/`](./skills/descriptive-analysis/) | Draft v0.1 | Reporting & characterization: expectation frames on every number → variation triage (SPC — routine vs. signal; routine gets no narrative) → a committed lede including the steady-state lede → proportional emphasis and loop-closing |
 
 All seven analysis types from the failure table are now drafted, plus the intake and reconciliation layers. The skills compose: the Refined Question Brief produced by `question-refinement` is the entry artifact consumed by each type-specific skill, and evidence labels (rungs, signal statuses, intervals) flow downstream into `prescriptive-analysis`.
 
@@ -55,9 +55,25 @@ The `question-refinement` skill routes requests at runtime; this table is the sa
 | A vague or suspicious analysis request from a stakeholder | `question-refinement` |
 | Not sure | `question-refinement` — deciding is its job |
 
-## Usage
+## Installation via plugin marketplace (Claude Code)
 
-Each skill is a folder containing a `SKILL.md` (the instructions) and optional `references/` (worked examples, templates). Portable across LLM products:
+This repo doubles as a Claude Code plugin marketplace. All nine skills ship in a single plugin, `stacked-analysis`:
+
+```
+/plugin marketplace add StackedAnalytics/analysis-skills-for-llms
+/plugin install stacked-analysis@stacked-analytics
+```
+
+Skills then appear namespaced (e.g. `stacked-analysis:root-cause-analysis`) and trigger automatically from their descriptions. Pull updates later with `/plugin marketplace update stacked-analytics`.
+
+Notes:
+
+- Because the repo is private, installation works where your git credentials do: Claude Code clones the marketplace with your local SSH key or token, so anyone with read access to the repo can install. Managed environments without your git credentials (e.g. Claude Cowork) can't install from a private repo — use the manual options below there.
+- The plugin manifests live in [`.claude-plugin/`](./.claude-plugin/); skill content is unchanged by the plugin packaging.
+
+## Manual usage
+
+Each skill is a folder under [`skills/`](./skills/) containing a `SKILL.md` (the instructions) and optional `references/` (worked examples, templates). Portable across LLM products:
 
 - **Claude (Skills / Projects):** install the folder as a skill, or paste `SKILL.md` into project knowledge.
 - **Claude Code / agents:** drop the folder into your skills directory; the frontmatter `description` handles triggering.
@@ -69,7 +85,7 @@ Each skill is a folder containing a `SKILL.md` (the instructions) and optional `
 The skill bodies are deliberately generic — the reasoning discipline doesn't change between companies. Organization-specific knowledge layers on via each skill's `references/` folder, without touching `SKILL.md`:
 
 ```
-root-cause-analysis/
+skills/root-cause-analysis/
 ├── SKILL.md                      ← never forked per client
 └── references/
     ├── worked-example.md          ← ships with the skill
@@ -107,7 +123,7 @@ The general division: execution tooling answers "how do I do this task with thes
 
 ## Evaluations
 
-Skills earn trust through scored runs, not authorship. The convention: each skill may carry an `evals/` folder of scenarios, each scenario a folder containing `prompt.md` (the task, plus the planted data characteristics the rubric tests), `rubric.md` (a MUST pass/fail gate for the skill's core discipline and a SHOULD x/N quality score for breadth), and `notes.md` (provenance and an append-only results log). Scenarios are seeded from real usage -- ideally true A/B runs (baseline vs. skill) -- and are **anonymized**: no client, person, location, or program names, no exact revenue figures. Rubric checks that map to a skill refinement double as regression tests for it. Runs after the 2026-07 floor-not-ceiling / decision-log convention are additionally graded on thoroughness beyond the scaffold (unscripted findings, quirks log) and on decision surfacing (verdict-shaping choices offered to the user) — treat these as standing SHOULD items in every scenario. First instance: `exploratory-data-analysis/evals/scenario-001-warehouse-first-look/`.
+Skills earn trust through scored runs, not authorship. The convention: each skill may carry an `evals/` folder of scenarios, each scenario a folder containing `prompt.md` (the task, plus the planted data characteristics the rubric tests), `rubric.md` (a MUST pass/fail gate for the skill's core discipline and a SHOULD x/N quality score for breadth), and `notes.md` (provenance and an append-only results log). Scenarios are seeded from real usage -- ideally true A/B runs (baseline vs. skill) -- and are **anonymized**: no client, person, location, or program names, no exact revenue figures. Rubric checks that map to a skill refinement double as regression tests for it. Runs after the 2026-07 floor-not-ceiling / decision-log convention are additionally graded on thoroughness beyond the scaffold (unscripted findings, quirks log) and on decision surfacing (verdict-shaping choices offered to the user) — treat these as standing SHOULD items in every scenario. First instance: `skills/exploratory-data-analysis/evals/scenario-001-warehouse-first-look/`.
 
 ## Status & feedback
 
