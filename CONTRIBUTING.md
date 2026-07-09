@@ -51,7 +51,7 @@ description: >
 - `## Communicating results (two layers)` — the deliverable reads in plain business language; the artifacts ship in a "How we checked this" workings layer. Include the vocabulary translation table.
 - `## Floor, not ceiling — and the decision log` — the beyond-the-scaffold pass, the quirks log, and the decision log with `USER-SETTABLE` flags.
 
-The clearest template is any existing skill; [`root-cause-analysis/SKILL.md`](./root-cause-analysis/SKILL.md) is a good reference.
+The clearest template is any existing skill; [`skills/root-cause-analysis/SKILL.md`](./skills/root-cause-analysis/SKILL.md) is a good reference.
 
 ## Contributing evals
 

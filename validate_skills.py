@@ -127,8 +127,11 @@ def validate_skill(skill_dir: Path):
 
 def main():
     root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent
+    # Skills live under skills/ (plugin layout); fall back to the repo root
+    # so the script still works when pointed at a bare collection of skills.
+    skills_root = root / "skills" if (root / "skills").is_dir() else root
     skill_dirs = sorted(
-        d for d in root.iterdir()
+        d for d in skills_root.iterdir()
         if d.is_dir() and (d / "SKILL.md").is_file()
     )
     if not skill_dirs:

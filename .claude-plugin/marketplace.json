@@ -1,0 +1,13 @@
+{
+  "name": "stacked-analytics",
+  "owner": {
+    "name": "Stacked Analytics"
+  },
+  "plugins": [
+    {
+      "name": "stacked-analysis",
+      "source": "./",
+      "description": "Structured data-analysis methodology skills: question intake, descriptive, exploratory, comparative, root-cause, causal-impact, predictive, prescriptive, and metric reconciliation."
+    }
+  ]
+}
