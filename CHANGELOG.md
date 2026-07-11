@@ -7,7 +7,8 @@ tooling, or contribution guidelines. Skill changes bump minor (or major for
 breaking restructures); everything else is at most a patch. The version in
 `.claude-plugin/plugin.json`, `.codex-plugin/plugin.json`, and `package.json`
 is bumped together (the validator enforces that they match), and each release
-is tagged `vX.Y.Z`.
+is tagged `vX.Y.Z` — automatically: when a new version lands on `main`, the
+`tag-release` workflow creates the tag.
 
 ## [1.0.1] — 2026-07-10
 
