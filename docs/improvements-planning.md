@@ -65,7 +65,31 @@ inspectable and the gaps read as invitations to contribute.
 
 ---
 
-## Issues to file
+## Issues filed
+
+All 17 issues below were filed on 2026-07-10. The list numbers used in this
+doc (and in cross-references like "issue #4") map to GitHub issue numbers as
+follows:
+
+| Doc item | GitHub issue |
+|---|---|
+| 1. CONTRIBUTING vs. validator | [#4](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/4) |
+| 2. CI validate check required | [#5](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/5) |
+| 3. Boilerplate single-sourcing | [#6](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/6) |
+| 4. Execution-layer guidance | [#7](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/7) |
+| 5. Trigger contention | [#8](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/8) |
+| 6. Lightweight contract | [#9](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/9) |
+| 7. Checklist placement | [#10](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/10) |
+| 8. Two anti-pattern lists | [#11](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/11) |
+| 9. question-refinement | [#12](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/12) |
+| 10. root-cause-analysis | [#13](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/13) |
+| 11. exploratory-data-analysis | [#14](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/14) |
+| 12. metric-reconciliation | [#15](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/15) |
+| 13. causal-impact | [#16](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/16) |
+| 14. comparative-analysis | [#17](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/17) |
+| 15. predictive-analysis | [#18](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/18) |
+| 16. prescriptive-analysis | [#19](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/19) |
+| 17. descriptive-analysis | [#20](https://github.com/StackedAnalytics/analysis-skills-for-llms/issues/20) |
 
 ### Repo/infrastructure issues
 
