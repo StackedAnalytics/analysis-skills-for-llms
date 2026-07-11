@@ -8,6 +8,7 @@ warnings are advisory.
 Usage:  python validate_skills.py [repo_root]
 """
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -102,6 +103,21 @@ def validate_skill(skill_dir: Path):
                     "helps prevent over-triggering"
                 )
 
+    # Progress checklist content: the block must contain checkbox items,
+    # including the two standing items every skill's conventions require.
+    checklist = re.search(r"^##\s+Progress checklist.*?```(.*?)```",
+                          text, re.MULTILINE | re.DOTALL | re.IGNORECASE)
+    if checklist:
+        block = checklist.group(1)
+        if not re.search(r"^- \[ \] .+", block, re.MULTILINE):
+            warnings.append("progress checklist block has no '- [ ]' items")
+        else:
+            for needle, label in (("beyond-the-scaffold", "beyond-the-scaffold pass"),
+                                  ("decision log", "decision log")):
+                if needle not in block.lower():
+                    warnings.append(f"progress checklist missing the standing "
+                                    f"'{label}' item")
+
     if len(lines) > MAX_SKILL_LINES:
         warnings.append(f"SKILL.md is {len(lines)} lines (> {MAX_SKILL_LINES}); "
                         "consider moving detail to references/")
@@ -123,6 +139,57 @@ def validate_skill(skill_dir: Path):
                                 "SKILL.md - the model has no way to discover it")
 
     return errors, warnings
+
+
+MANIFEST_PATHS = (
+    ".claude-plugin/plugin.json",
+    ".codex-plugin/plugin.json",
+    "package.json",
+)
+
+
+def validate_manifests(root: Path):
+    """Cross-check the plugin manifests for name/version drift.
+
+    The plugin identity lives in four files; the name must match across all
+    of them and the version across the three that carry one. Returns
+    (found_any, errors) so a bare skills collection (no manifests) skips
+    this check entirely.
+    """
+    errors = []
+    names, versions = {}, {}
+
+    for rel in MANIFEST_PATHS:
+        path = root / rel
+        if not path.is_file():
+            continue
+        try:
+            data = json.loads(path.read_text("utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append(f"{rel}: invalid JSON ({exc})")
+            continue
+        names[rel] = data.get("name")
+        versions[rel] = data.get("version")
+
+    marketplace = root / ".claude-plugin" / "marketplace.json"
+    if marketplace.is_file():
+        try:
+            plugins = json.loads(marketplace.read_text("utf-8")).get("plugins", [])
+            if plugins:
+                names[".claude-plugin/marketplace.json (plugins[0])"] = \
+                    plugins[0].get("name")
+        except json.JSONDecodeError as exc:
+            errors.append(f".claude-plugin/marketplace.json: invalid JSON ({exc})")
+
+    if len(set(names.values())) > 1:
+        errors.append("plugin name differs across manifests: "
+                      + "; ".join(f"{k} -> {v!r}" for k, v in sorted(names.items())))
+    if len(set(versions.values())) > 1:
+        errors.append("plugin version differs across manifests: "
+                      + "; ".join(f"{k} -> {v!r}" for k, v in sorted(versions.items()))
+                      + " (bump all three together; see CHANGELOG.md)")
+
+    return bool(names or versions), errors
 
 
 def main():
@@ -148,6 +215,13 @@ def main():
         for w in warnings:
             print(f"    warn:  {w}")
         total_errors += len(errors)
+
+    manifests_found, manifest_errors = validate_manifests(root)
+    if manifests_found:
+        print(f"[{'FAIL' if manifest_errors else 'OK'}] plugin manifests")
+        for e in manifest_errors:
+            print(f"    ERROR: {e}")
+        total_errors += len(manifest_errors)
 
     print(f"\n{len(skill_dirs)} skill(s) checked, {total_errors} error(s).")
     sys.exit(1 if total_errors else 0)

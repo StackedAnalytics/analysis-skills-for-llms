@@ -22,7 +22,9 @@ python validate_skills.py
 It reports two severities:
 
 - **ERROR → fails CI.** Hard [Agent Skills spec](https://platform.claude.com) violations: missing frontmatter, missing `name`/`description`, a `name` over 64 chars or not `lowercase-with-hyphens`, a `name` containing a reserved word (`anthropic`, `claude`), a `description` over 1024 chars, or a UTF-8 BOM at the start of the file.
-- **warn → advisory, does not fail CI.** Structural conventions: a missing required section, a `description` over 800 chars or lacking a negative trigger, a `SKILL.md` over 500 lines, or a `references/` file never mentioned in `SKILL.md` (the model can't discover it). **Treat warnings as must-fix in review** — they don't block the machine, but they block a good review.
+- **warn → advisory, does not fail CI.** Structural conventions: a missing required section, a `description` over 800 chars or lacking a negative trigger, a `SKILL.md` over 500 lines, a progress checklist missing its checkbox items or the standing beyond-the-scaffold / decision-log entries, or a `references/` file never mentioned in `SKILL.md` (the model can't discover it). **Treat warnings as must-fix in review** — they don't block the machine, but they block a good review.
+
+The validator also cross-checks the **plugin manifests**: the plugin `name` must match across `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.codex-plugin/plugin.json`, and `package.json`, and the `version` must match across the three that carry one. Drift is an ERROR. When a change warrants a release, bump the version in all three manifests together and add a [CHANGELOG.md](./CHANGELOG.md) entry — the plugin identity deliberately lives in one version number, not per-skill versions.
 
 ## Anatomy of a skill
 
