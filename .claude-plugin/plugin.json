@@ -1,8 +1,12 @@
 {
   "name": "stacked-analysis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Structured data-analysis methodology skills from Stacked Analytics — engineered around the type-specific reasoning failures of LLMs doing high-level analysis",
   "author": {
     "name": "Stacked Analytics"
-  }
+  },
+  "homepage": "https://github.com/StackedAnalytics/analysis-skills-for-llms",
+  "repository": "https://github.com/StackedAnalytics/analysis-skills-for-llms",
+  "license": "MIT",
+  "keywords": ["data-analysis", "analytics", "root-cause-analysis", "forecasting", "skills"]
 }

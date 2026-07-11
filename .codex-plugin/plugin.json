@@ -1,6 +1,6 @@
 {
   "name": "stacked-analysis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Structured data-analysis methodology skills from Stacked Analytics — engineered around the type-specific reasoning failures of LLMs doing high-level analysis: question intake, descriptive, exploratory, comparative, root-cause, causal-impact, predictive, prescriptive, and metric reconciliation.",
   "keywords": ["data-analysis", "analytics", "root-cause-analysis", "forecasting", "skills"],
   "skills": "./skills/",
