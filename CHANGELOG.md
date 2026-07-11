@@ -1,12 +1,17 @@
 # Changelog
 
 All notable changes to the `stacked-analysis` plugin are documented here.
-Versioning is plugin-level [semver](https://semver.org/): the plugin version
-in `.claude-plugin/plugin.json`, `.codex-plugin/plugin.json`, and
-`package.json` is bumped together on every meaningful change (the validator
-enforces that they match), and each release is tagged `vX.Y.Z`.
+Versioning is plugin-level [semver](https://semver.org/), and **the version
+tracks the plugin's contents — the skills themselves** — not repo plumbing,
+tooling, or contribution guidelines. Skill changes bump minor (or major for
+breaking restructures); everything else is at most a patch. The version in
+`.claude-plugin/plugin.json`, `.codex-plugin/plugin.json`, and `package.json`
+is bumped together (the validator enforces that they match), and each release
+is tagged `vX.Y.Z`.
 
-## [1.1.0] — 2026-07-10
+## [1.0.1] — 2026-07-10
+
+Packaging and tooling only; skill content is unchanged from 1.0.0.
 
 ### Added
 
