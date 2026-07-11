@@ -9,6 +9,9 @@ on:
     branches: [main]
     paths:
       - ".claude-plugin/plugin.json"
+  # Manual trigger, for bootstrapping a tag the push trigger missed
+  # (e.g. the version changed before this workflow existed).
+  workflow_dispatch:
 
 permissions:
   contents: write
