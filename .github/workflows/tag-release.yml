@@ -1,0 +1,38 @@
+name: Tag release
+
+# When a new plugin version lands on main, create the matching vX.Y.Z tag.
+# Idempotent: if the tag already exists (or the push didn't change the
+# version), the job is a no-op.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".claude-plugin/plugin.json"
+  # Manual trigger, for bootstrapping a tag the push trigger missed
+  # (e.g. the version changed before this workflow existed).
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Tag the version if untagged
+        run: |
+          version=$(python3 -c "import json; print(json.load(open('.claude-plugin/plugin.json'))['version'])")
+          tag="v$version"
+          if git ls-remote --exit-code --tags origin "refs/tags/$tag" >/dev/null 2>&1; then
+            echo "$tag already exists - nothing to do."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git tag -a "$tag" -m "Release $tag"
+            git push origin "$tag"
+            echo "Created and pushed $tag."
+          fi
