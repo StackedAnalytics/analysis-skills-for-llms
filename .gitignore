@@ -12,3 +12,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# Agentic stuff
+.claude/settings.local.json
