@@ -3,16 +3,15 @@ name: question-refinement
 description: >
   Intake discipline for data analysis requests: figure out what is actually
   being asked before analyzing anything. Use this skill when the analysis
-  type is AMBIGUOUS or the request needs reconstruction before work can
-  start: a bare data pull or report request ("pull X," "show me Y by Z,"
-  "look into the numbers"), a request with an implied cause or solution
-  baked in, a metric that is a proxy for something else, or an unclear
-  decision behind the ask. The output is a refined question brief that
-  routes to the appropriate analysis skill (RCA, EDA, comparative, etc.).
-  Do NOT use this when the request already clearly matches one analysis
-  type — those skills run their own inline intake triage — and do NOT
-  re-run it for follow-ups inside an already-scoped analysis where the
-  brief still holds: refine once, then work.
+  type is AMBIGUOUS or the request needs reconstruction: a bare data pull or
+  report request ("pull X," "show me Y by Z," "look into the numbers"), a
+  request with an implied cause or solution baked in, a metric that is a
+  proxy for something else, or an unclear decision behind the ask. Produces
+  a refined question brief that routes to the right analysis skill (RCA,
+  EDA, comparative, etc.). Do NOT use this when the request already clearly
+  matches one analysis type — those skills run their own inline intake
+  triage — and do NOT re-run it for follow-ups inside an already-scoped
+  analysis where the brief still holds: refine once, then work.
 ---
 
 # Question Refinement
