@@ -41,7 +41,7 @@ If unsure what good looks like at any stage, read [references/worked-example.md]
 
 ## Stage 1 — Reframe: attach the gap to decisions and set materiality
 
-Before measuring anything, convert the matching request into a decision question (consume the Refined Question Brief if one exists):
+Before measuring anything, convert the matching request into a decision question (consume the Refined Question Brief if one exists; if none does, run the question-refinement triage inline first — a one-line DECLARE is enough for a clear reconciliation ask):
 
 1. **What decisions does each number feed?** List them concretely: budget allocation, board reporting, bid optimization, revenue recognition. Different decisions can legitimately use different systems' numbers — that is normal, not a problem to fix.
 2. **Set the materiality threshold** (borrowed from audit practice): for each decision, how big would the disagreement have to be to change what anyone does? A 12% gap between GA4 and the ad platform is immaterial to a "keep vs. kill the channel" call and highly material to a CPA-based bid strategy. Materiality is a property of the decision, not the data.

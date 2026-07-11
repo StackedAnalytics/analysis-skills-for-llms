@@ -9,6 +9,27 @@ breaking restructures); everything else is at most a patch. The version in
 is bumped together (the validator enforces that they match), and each release
 is tagged `vX.Y.Z`.
 
+## [1.1.0] — 2026-07-11
+
+Skill content: trigger precedence between question-refinement and the eight
+type skills (issue #8).
+
+### Changed
+
+- `question-refinement` description: fires on *ambiguous* or
+  reconstruction-needing requests instead of "the START of any analysis
+  request"; the `"why did A drop"` / `"which option is better"` examples
+  (which route cleanly to type skills) are removed, and a negative trigger
+  defers clearly-typed requests to their type skill.
+- All eight type skills: Stage 1 now opens with an intake bootstrap — if no
+  Refined Question Brief exists, run the question-refinement triage
+  (INFER / DECLARE / ASK) inline first, typically a one-line DECLARE. The
+  intake→type composition now happens regardless of which skill's
+  description wins selection.
+- `root-cause-analysis` description: the "why don't these two numbers match"
+  example (metric-reconciliation's territory) is replaced by an explicit
+  carve-out to metric-reconciliation.
+
 ## [1.0.1] — 2026-07-10
 
 Packaging and tooling only; skill content is unchanged from 1.0.0.

@@ -47,7 +47,7 @@ If unsure what good looks like at any stage, read [references/worked-example.md]
 
 ## Stage 1 — Frame: audience, use, and materiality
 
-Consume the Refined Question Brief if one exists. Establish:
+Consume the Refined Question Brief if one exists; if none does, run the question-refinement triage (INFER / DECLARE / ASK) inline first — for a routine reporting request a one-line DECLARE is enough. Establish:
 
 1. **Who reads this and what they do with it.** A CMO's monthly review, an ops standup, a board packet — each implies different metrics, altitude, and vocabulary. Recurring reports serve a recurring decision (or a monitoring duty); name it.
 2. **Materiality thresholds, per key metric.** What size of movement would this audience actually act on or need to know? These thresholds calibrate emphasis in Stage 5 — and they are about *decision relevance*, which is a different question from the statistical one in Stage 3. A movement can be a genuine signal and still immaterial, or material and still (so far) indistinguishable from noise; the report must be able to say either.
