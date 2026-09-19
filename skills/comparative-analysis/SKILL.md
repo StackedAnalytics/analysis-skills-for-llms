@@ -44,6 +44,8 @@ If unsure what good looks like at any stage, read [references/worked-example.md]
 
 ## Stage 1 — Comparability audit: are these numbers commensurable?
 
+Consume the Refined Question Brief if one exists; if none does, run the question-refinement triage (INFER / DECLARE / ASK) inline first — for a clear comparison request a one-line DECLARE is enough.
+
 Before computing anything, audit the terms of the comparison. For each entity/group being compared, verify:
 
 | Term | Check |

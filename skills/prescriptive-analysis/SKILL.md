@@ -47,7 +47,7 @@ If unsure what good looks like at any stage, read [references/worked-example.md]
 
 ## Stage 1 — Frame the decision and fix the criteria (before touching options)
 
-Consume the Refined Question Brief. Establish, in order:
+Consume the Refined Question Brief if one exists; if none does, run the question-refinement triage (INFER / DECLARE / ASK) inline first — recommendation requests carry framing pressure, so the DECLARE should name the lean. Establish, in order:
 
 1. **The actual decision and its owner.** What is being decided, by whom, by when, and is it one decision or several tangled together? The analysis advises; the owner decides — built correctly, any disagreement at the end should localize to *weights*, not facts.
 2. **Framing-pressure check, stated in the output.** Does the request lean? ("Should we finally…", "make the case for…", "leadership wants to…"). Name it, then design symmetric: the analysis must be equally capable of recommending against the lean.

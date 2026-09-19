@@ -5,10 +5,12 @@ description: >
   drops, spikes, anomalies, discrepancies, regressions, or "why did X happen"
   questions. Use this skill whenever the task involves explaining an observed
   change or difference, even if the user doesn't say "root cause": questions
-  like "why did conversions drop," "what's driving this spike," "why don't
-  these two numbers match," or "something broke, figure out what" all qualify.
-  Do NOT use for open-ended exploration of unfamiliar data (use an EDA skill)
-  or for forward-looking "what will happen" questions.
+  like "why did conversions drop," "what's driving this spike," or "something
+  broke, figure out what" all qualify.
+  Do NOT use for open-ended exploration of unfamiliar data (use an EDA skill),
+  for cross-system metric discrepancies like "why don't these two tools agree"
+  (use metric-reconciliation), or for forward-looking "what will happen"
+  questions.
 ---
 
 # Root Cause Analysis
@@ -38,6 +40,8 @@ Copy this into the response and check items off as the artifacts are produced --
 If unsure what good looks like at any stage, read [references/worked-example.md](references/worked-example.md) -- a compressed end-to-end run of this skill.
 
 ## Stage 1 — Specify the problem (before any hypothesizing)
+
+Consume the Refined Question Brief if one exists; if none does, run the question-refinement triage (INFER / DECLARE / ASK) inline first — for a clearly diagnostic request a one-line DECLARE is enough.
 
 Adapted from Kepner-Tregoe Problem Analysis. Before asking *why*, pin down precisely *what*. Most bad RCA starts by explaining a problem that was never accurately described.
 

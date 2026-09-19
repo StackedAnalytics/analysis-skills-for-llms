@@ -48,7 +48,7 @@ If unsure what good looks like at any stage, read [references/worked-example.md]
 
 ## Stage 1 — Classify the claim needed (before choosing any method)
 
-Consume the Refined Question Brief if one exists. Establish what strength of claim the *decision* actually requires — many "impact" requests don't need causal proof:
+Consume the Refined Question Brief if one exists; if none does, run the question-refinement triage (INFER / DECLARE / ASK) inline first — for a clear impact question a one-line DECLARE is enough. Establish what strength of claim the *decision* actually requires — many "impact" requests don't need causal proof:
 
 - **Decision needs a defensible point estimate** (budget justification, incrementality-based bidding, pricing): full causal workup required.
 - **Decision needs a direction or a bound** ("is it plausibly positive?", "is the effect at least break-even?"): a bounded or ceiling estimate may suffice — cheaper and more honest than a shaky point estimate.

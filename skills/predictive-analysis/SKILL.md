@@ -43,7 +43,7 @@ If unsure what good looks like at any stage, read [references/worked-example.md]
 
 ## Stage 1 — Frame: decision, horizon, and the cost of being wrong
 
-Consume the Refined Question Brief if one exists. Establish:
+Consume the Refined Question Brief if one exists; if none does, run the question-refinement triage (INFER / DECLARE / ASK) inline first — for a clear forecasting request a one-line DECLARE is enough. Establish:
 
 1. **What decision consumes this forecast**, at what granularity and horizon. A staffing decision needs monthly resolution; a pacing check needs "on/off track with what confidence." Scaling decisions ("how much more can we spend/produce/hire before returns break") need the **marginal** quantity, not the average: under diminishing returns, marginal return ≈ elasticity × average return, so a healthy blended average can hide a next-unit return already at or below the threshold. If the decision is about the next dollar, forecast the next dollar — and say plainly when only an experiment can measure it.
 2. **Asymmetric error costs.** Which direction of wrong is worse? Overforecasting leads means overstaffed admissions; underforecasting inventory means stockouts. The *reported* number can legitimately sit off-center of the distribution when costs are asymmetric — but that choice is made explicitly, not smuggled.
